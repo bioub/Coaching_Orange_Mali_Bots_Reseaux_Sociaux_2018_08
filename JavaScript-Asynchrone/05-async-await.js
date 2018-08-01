@@ -15,3 +15,14 @@ async function copy() {
 }
 
 copy();
+
+
+/* avec await 
+fs.readFile(fileSrcPath)
+  .then((buffer) => fs.writeFile(fileDestPath, buffer))
+*/
+
+/* sans await (on peut savoir quand le dernier a été lu)
+fs.readFile(fileSrcPath1)
+fs.readFile(fileSrcPath2)
+*/

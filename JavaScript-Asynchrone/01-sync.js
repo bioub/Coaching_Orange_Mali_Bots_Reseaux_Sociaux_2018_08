@@ -11,3 +11,12 @@ try {
 catch (err) {
   console.log(err);
 }
+
+// pile d'appel de fonctions
+// ^
+// |
+// |
+// |
+// |require - (readFileSync - writeFileSync) - log
+// +----------------------------------------------> temps (pas à l'échelle)
+// sortie:                                   Done

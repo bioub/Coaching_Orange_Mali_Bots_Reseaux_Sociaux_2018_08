@@ -14,3 +14,16 @@ fs.readFile(fileSrcPath, (err, buffer) => {
 
 });
 
+
+
+console.log('After ReadFile');
+
+
+// pile d'appel de fonctions
+// ^
+// |
+// |
+// |                                         writeFile                   log
+// |require - readFile - log ............... =>        ................. =>
+// +-----------------------------------------------------------------------> temps (pas à l'échelle)
+// sortie:               After ReadFile                                  Done
