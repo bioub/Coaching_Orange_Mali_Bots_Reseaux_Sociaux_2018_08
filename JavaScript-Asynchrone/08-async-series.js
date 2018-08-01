@@ -22,7 +22,7 @@ async function copyFile(src, dest) {
 async function copyAllFiles()
 {
   const files = await fs.readdir('./source');
-  
+
   for (const file of files) {
     await copyFile('./source/' + file, './dest/' + file);
   }

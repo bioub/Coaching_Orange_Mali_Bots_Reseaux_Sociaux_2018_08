@@ -36,6 +36,7 @@ function axios(msg) {
   });
 }
 
+// Promise.all permet d'exécuter du code quand les 3 promesses sont terminées
 Promise.all([
   axios('A'),
   axios('B'),

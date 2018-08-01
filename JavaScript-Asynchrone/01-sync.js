@@ -19,4 +19,4 @@ catch (err) {
 // |
 // |require - (readFileSync - writeFileSync) - log
 // +----------------------------------------------> temps (pas à l'échelle)
-// sortie:                                   Done
+// sortie:                                     Done

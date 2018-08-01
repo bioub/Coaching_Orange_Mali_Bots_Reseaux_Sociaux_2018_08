@@ -17,7 +17,7 @@ async function copy() {
 copy();
 
 
-/* avec await 
+/* avec await
 fs.readFile(fileSrcPath)
   .then((buffer) => fs.writeFile(fileDestPath, buffer))
 */
