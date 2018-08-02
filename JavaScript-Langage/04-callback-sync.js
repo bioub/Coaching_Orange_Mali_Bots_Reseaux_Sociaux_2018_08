@@ -1,6 +1,6 @@
 const nbs = [2, 3, 4, 5];
 
-// Fonctions qui remplace un algo (programmation fonctionnelle)
+// Fonctions qui remplace un algo (programmation fonctionnelle) (ES5, IE8+)
 // Algo : Afficher le carré des nombres pairs du tableau
 nbs
   .filter((nb) => nb % 2 === 0)

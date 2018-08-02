@@ -35,6 +35,10 @@ const myMath = {
   substract: (a, b) => a - b,
 };
 
+console.log(myMath.sum(1, 2)); // 3
+console.log(myMath.substract(2, 1)); // 1
+console.log(myMath.substract(2, 1)); // 1
+
 // multi-instance très simple à créer (sans méthode / pas de type)
 const coordsA = {
   x: 10,
@@ -46,6 +50,13 @@ const coordsB = {
   y: 30,
 };
 
+// pas de type
+// console.log(coordsA instanceof Coords); // false
+console.log(coordsA instanceof Object); // true
+// comme en Java on hérite au plus niveau de Object
+
+
+
 // constructor function, (ressemble aux classes en Java) cas d'utilisations :
 // multi-instance (avec méthode et type)
 
@@ -54,15 +65,21 @@ function Contact(prenom) {
   this.prenom = prenom;
 }
 
-// méthodes (tous les objets Contact pourront appeler la méthode)
+// méthodes de l'instance/objet (tous les objets Contact pourront appeler la méthode)
 Contact.prototype.hello = function() {
   return "Bonjour je m'appelle " + this.prenom;
+};
+
+// méthode de la classe/statique
+Contact.getClass = function() {
+  return "Contact";
 };
 
 const romain = new Contact('Romain');
 console.log('typeof romain', typeof romain); // object
 console.log('romain.prenom', romain.prenom); // Romain
 console.log('romain.hello()', romain.hello()); // Bonjour je m'appelle Romain
+console.log('Contact.getClass()', Contact.getClass()); // Bonjour je m'appelle Romain
 
 const fatou = new Contact('Fatou');
 console.log('fatou.prenom', fatou.prenom); // Fatou
