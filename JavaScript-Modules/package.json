@@ -1,5 +1,12 @@
 {
   "dependencies": {
     "chalk": "^2.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.2.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   }
 }

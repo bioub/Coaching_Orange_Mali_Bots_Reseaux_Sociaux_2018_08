@@ -10,6 +10,12 @@ let total = 0;
  */
 const sum = (a, b) => a + b;
 
+/*
+function sum(a, b) {
+  return a + b;
+}
+*/
+
 for (const nb of nbs) {
   total = sum(total, nb);
 }

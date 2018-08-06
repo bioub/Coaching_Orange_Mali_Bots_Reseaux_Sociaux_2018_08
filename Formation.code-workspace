@@ -11,7 +11,12 @@
 		},
 		{
 			"path": "JavaScript-Modules"
+		},
+		{
+			"path": "Facebook"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
 }

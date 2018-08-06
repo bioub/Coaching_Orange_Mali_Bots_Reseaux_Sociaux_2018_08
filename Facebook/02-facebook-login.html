@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="login_container" style="display: none">
+    <fb:login-button scope="public_profile,email,user_birthday,user_events,user_posts" onlogin="checkLoginState();">
+    </fb:login-button>
+  </div>
+
+  <button onclick="disconnect()">Se déconnecter</button>
+
+  <script>
+    /*
+    Exercice - Afficher la liste des events de l'utilisateur connecté
+    */
+
+    function disconnect() {
+      FB.logout(function (response) {
+        const loginContainer = document.querySelector('.login_container');
+        loginContainer.style.display = 'block'; // <div class="login_container" style="display: block">
+      });
+    }
+
+    function checkLoginState() {
+      FB.getLoginStatus(function (response) {
+
+        console.log(response);
+
+        // si la personne n'est pas encore connectée
+        if (response.status !== 'connected') {
+          // on lui affiche le bouton login
+          const loginContainer = document.querySelector('.login_container');
+          loginContainer.style.display = 'block'; // <div class="login_container" style="display: block">
+          return;
+        }
+
+        console.log('Vous etes connecté');
+        FB.api(
+          '/me?fields=name,email,birthday',
+          function (response) {
+            if (response && !response.error) {
+              console.log(response);
+            }
+          }
+        );
+
+
+        FB.api(
+          "/me/feed",
+          function (response) {
+            if (response && !response.error) {
+              console.log(response);
+            }
+          }
+        );
+
+      });
+    }
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '274277119825188',
+        cookie: true,
+        xfbml: true,
+        version: 'v3.1'
+      });
+
+      FB.AppEvents.logPageView();
+
+      checkLoginState();
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+</body>
+
+</html>

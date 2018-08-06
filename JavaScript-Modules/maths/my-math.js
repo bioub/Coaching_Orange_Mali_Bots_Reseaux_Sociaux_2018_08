@@ -2,7 +2,9 @@
 // au niveau du fichier
 // (function (exports, require, module, __filename, __dirname) {
 
-const sum = (a, b) => Number(a) + Number(b);
+const convertToNumber = (val) => Number(val);
+
+const sum = (a, b) => convertToNumber(a) + convertToNumber(b);
 const substract = (a, b) => a - b;
 
 exports.sum = sum;

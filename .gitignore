@@ -1,1 +1,4 @@
 /UnirestJava/target/
+node_modules
+.vscode
+nbproject

@@ -9,7 +9,7 @@ const chalk = require('chalk'); // installé avec npm install chalk
 const myMath = require('./my-math'); // fichier qu'on a créé (./ ou ../ obligatoire)
 
 try {
-  assert.strictEqual(myMath.sum(1, 2), 5);
+  assert.strictEqual(myMath.sum(1, 2), 3);
   assert.strictEqual(myMath.substract(2, 1), 1);
   console.log(chalk.green('my-math.test.js success'));
 }

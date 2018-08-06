@@ -45,9 +45,9 @@ class Jeu {
     }
 
     this.rl.question('Quel est le nombre entier ? ', (answer) => {
-      const entierSaisi = parseInt(answer);
+      const entierSaisi = Number.parseInt(answer);
 
-      if (isNaN(entierSaisi)) {
+      if (Number.isNaN(entierSaisi)) {
         console.log('Erreur : il faut jouer un nombre');
         return this.jouer();
       }
@@ -69,7 +69,6 @@ class Jeu {
     });
   }
 }
-
 
 const jeu = new Jeu();
 jeu.jouer();
